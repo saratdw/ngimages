@@ -1,0 +1,58 @@
+
+
+
+<label class="uploader" ondragover="return false;"
+    [class.loaded]="loaded" 
+    [style.outlineColor]="dragging ? activeColor : baseColor"
+    (dragenter)="handleDragEnter()"
+    (dragleave)="handleDragLeave()"
+    (drop)="handleDrop($event)">
+    
+    <i class="icon icon-upload" 
+        [style.color]="dragging 
+            ? ((imageSrc.length > 0) ? overlayColor : activeColor)
+            : ((imageSrc.length > 0) ? overlayColor : baseColor)"></i>
+    
+  
+    
+    <input type="file" name="file" value="file" accept="image/*"
+        (change)="handleInputChange($event)">
+                 
+           
+   
+<!-----------------------------------gridview-------------------------------------------------------------------------------------->
+<div class="container">
+<div id="categories" class="row list-group">
+
+    <div class="row-xs-4">
+        <div class="col-xs-4">
+         <img  class="img-responsive group list-group-image" src="assets/images/ayurvedha.jpg" width="100px" height="100px">
+            </div>
+            </div>
+
+        <div class="row-xs-4">
+        <div class="col-xs-4">
+        <img  class="img-responsive group list-group-image" src="assets/images/homeopathy.jpg" width="150px" height="150px">
+        </div>
+        </div>
+
+        <div class="row-xs-4">
+        <div class="col-xs-4">
+             <img  class="img-responsive group list-group-image" src="assets/images/medicines.jpg" width="100px" height="100px">
+          </div>
+         </div>
+       
+       <hr>
+        <div class="row-xs-4">
+        <div class="col-xs-4" *ngFor="let image of images">
+            <img 
+        [src]= image 
+        (load)="handleImageLoad()" 
+        [class.loaded]="imageLoaded" width="40%" height="40%"/>
+          </div>
+         </div>
+       
+    
+
+   </div>
+    </div>
